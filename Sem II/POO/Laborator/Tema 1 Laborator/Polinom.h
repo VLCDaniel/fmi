@@ -12,15 +12,15 @@ public:
 	Polinom(const Polinom&); // constructor de copiere
 	~Polinom(); // destructor
 	friend istream& operator>>(istream&, Polinom&); // supraincarc citirea
-	friend ostream& operator<<(ostream&, const Polinom&); // supraincarc afisarea
+	friend ostream& operator<<(ostream&, const Polinom); // supraincarc afisarea
 	Polinom& operator=(const Polinom&); // supraincarc '='
 	double calcul(double); // calculeaza valoarea polinomului
-	friend Polinom operator+(const Polinom&, const Polinom&); // supraincarcarea operatorului '+'
+	Polinom operator+(const Polinom); // supraincarcarea operatorului '+'
 	double operator[](unsigned int); // supraincarcarea operatorului '[]'
-	friend Polinom operator*(const Polinom&, const Polinom&); // supraincarcarea operatorului '*' pentru inmultirea a 2 polinoame
-	friend Polinom operator*(const int&, const Polinom&); // supraincarcarea operatorului '*' pentru inmultirea cu un scalar la stanga
-	friend Polinom operator*(const Polinom& ,const int&); // supraincarcarea operatorului '*' pentru inmultirea cu un scalar la dreapta
-	friend Polinom operator/(const Polinom&, const Polinom&); // supraincarcarea operatorului '/' pentru impartirea polinoamelor
+	Polinom operator*(const Polinom); // supraincarcarea operatorului '*' pentru inmultirea a 2 polinoame
+	Polinom operator*(const int); // supraincarcarea operatorului '*' pentru inmultirea cu un scalar la dreapta
+	friend Polinom operator*(const int, const Polinom); // supraincarcarea operatorului '*' pentru inmultirea cu un scalar la stanga
+	Polinom operator/(const Polinom); // supraincarcarea operatorului '/' pentru impartirea polinoamelor
 	void adaugare(double, int); // adaugarea unui termen de grad i
 	void eliminare(int); // eliminarea unui termen de grad i
 	int getGrad() const; // metoda care intoarce gradul polinomului

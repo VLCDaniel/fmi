@@ -23,15 +23,16 @@ int main()
 
 	cout << p.calcul(1) << '\n'; // Calculul lui p(1)
 
-	//cout << p[10]; // Gradul introdus nu exista - eroare tratata
-	
-	p3 = 5 * p1; // Inmultirea cu un scalar
+	//cout << p[10] << '\n'; // Gradul introdus nu exista - eroare tratata
+
+	p3 = p1 * 5; // Inmultirea cu un scalar
 	cout << p3;
 
-	p3 = p2 * p; // Inmultirea intre doua polinoame
+	p3 = p1 * p; // Inmultirea intre doua polinoame
 	cout << p3;
 
-	assert((p2 * p).getGrad() == (p2.getGrad() + p.getGrad())); // Verific daca inmultirea polinoamelor e corecta - prin verificarea gradelor
+	assert((p2 * p).getGrad() == (p2.getGrad() + p.getGrad())); // Verific daca inmultirea polinoamelor e corecta :
+																// prin verificarea gradelor
 
 	/*
 	Polinom p4;
@@ -44,7 +45,7 @@ int main()
 	{
 		cout << "Ambele polinoame sunt 0. Impartirea nu are sens!";
 		exit(-1);
-	} 
+	}
 	*/
 
 	cout << p / p1; // Impartirea polinoamelor

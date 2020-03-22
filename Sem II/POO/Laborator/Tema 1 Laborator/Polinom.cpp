@@ -18,6 +18,10 @@ Polinom::Polinom(unsigned int x, double v[]) // Constructor cu parametrii
 		{
 			coef[i] = v[i]; // Adaug coeficientii in vector
 		}
+		if (this->coef[this->grad] == 0) // Daca coef[grad] = 0, arunc o exceptie, intrucat gradul dominant nu poate fi 0
+		{
+			throw invalid_argument("Coeficientul dominant nu poate fi 0");
+		}
 	}
 	else // Daca nu dau coeficientii, vreau sa initializez toti coeficientii cu 0
 	{
@@ -49,29 +53,25 @@ Polinom::~Polinom() // Destructor
 
 istream& operator>>(istream& input, Polinom& p) // Supraincarcarea operatorului de citire '>>'
 {
-	input >> p.grad; // Citesc gradul
+	unsigned int grad;
+	input >> grad; // Citesc gradul
+	p.grad = grad;
 	delete[]p.coef; // Dezaloc memoria veche (in cazul in care a fost folosit constructorul cu parametrii inainte)
 	p.coef = new double[p.grad + 1]; // Aloc memorie
 	for (int i = 0; i <= p.grad; i++)
 	{
-		input >> p.coef[i]; // Citesc coeficientii in vector
+		double coef;
+		input >> coef; // Citesc coeficientii in vector
+		p.coef[i] = coef;
 	}
-	try // Daca v[grad] = 0, arunc o exceptie, intrucat gradul dominant nu poate fi 0
+	if (p.coef[p.grad] == 0) // Daca v[grad] = 0, arunc o exceptie, intrucat gradul dominant nu poate fi 0
 	{
-		if (p.coef[p.grad] == 0)
-		{
-			throw p.grad;
-		}
-	}
-	catch (unsigned int grad)
-	{
-		cout << "Coeficientul dominant nu poate fi 0";
-		exit(-1);
+		throw invalid_argument("Coeficientul dominant nu poate fi 0");
 	}
 	return input;
 }
 
-ostream& operator<<(ostream& output, const Polinom& p) // Supraincarcarea operatorului de afisare '<<'
+ostream& operator<<(ostream& output, const Polinom p) // Supraincarcarea operatorului de afisare '<<'
 {
 	for (int i = p.grad; i > 0; i--)
 	{
@@ -104,7 +104,7 @@ Polinom& Polinom::operator=(const Polinom& p) // Supraincarcarea operatorului '=
 {
 	if (this == &p) // Daca cele doua polinoame sunt egale, nu fac nimic
 		return *this;
-	//delete[]this->coef; // Dezaloc memoria
+	delete[]this->coef; // Dezaloc memoria
 	this->grad = p.grad;
 	this->coef = new double[p.grad + 1]; // Aloc memorie noua
 	for (int i = 0; i <= p.grad; i++)
@@ -124,80 +124,86 @@ double Polinom::calcul(double x) // Calculez valoarea polinomului in x
 	return valoare;
 }
 
-Polinom operator+(const Polinom& p1, const Polinom& p2) // Supraincarcarea operatorului '+'
+Polinom Polinom::operator+(const Polinom p) // Supraincarcarea operatorului '+'
 {
-	Polinom p3;
-	if (p1.grad >= p2.grad) // Cazul in care gradul lui p1 >= gradul lui p2
+	if (this->grad >= p.grad) // Cazul in care gradul polinomului din stanga >= gradul polinomului din dreapta
 	{
-		p3.grad = p1.grad;
-		p3.coef = new double[p3.grad + 1];
-		for (int i = 0; i <= p2.grad; i++)
+		Polinom p3(this->grad); // Polinomul care va fi returnat
+		for (int i = 0; i <= p.grad; i++)
 		{
-			p3.coef[i] = p1.coef[i] + p2.coef[i]; // Adaug in vectorul de coeficienti din p3 suma coeficientilor pana la gradul lui p2
+			p3.coef[i] = this->coef[i] + p.coef[i]; // Adaug in vectorul de coeficienti din p3 suma 
+													// coeficientilor pana la gradul lui p
 		}
-		for (int i = p2.grad + 1; i <= p1.grad; i++)
+		for (int i = p.grad + 1; i <= this->grad; i++)
 		{
-			p3.coef[i] = p1.coef[i]; // Dupa adaug in vectorul de coeficienti din p3 ce a ramas din vectorul coeficientilor din p1
+			p3.coef[i] = this->coef[i]; // Dupa adaug in vectorul de coeficienti din p3 ce a ramas din vectorul 
+										// coeficientilor din polinomul din stanga
 		}
+		return p3;
 	}
-	else // Analog pentru cazul in care gradul lui p2 > gradul lui p1
+	else // Analog pentru cazul in care gradul polinomului din dreapta > gradul polinomului din stanga
 	{
-		p3.grad = p2.grad;
-		p3.coef = new double[p2.grad];
-		for (int i = 0; i <= p1.grad; i++)
+		Polinom p3(p.grad);
+		for (int i = 0; i <= this->grad; i++)
 		{
-			p3.coef[i] = p1.coef[i] + p2.coef[i];
+			p3.coef[i] = this->coef[i] + p.coef[i];
 		}
-		for (int i = p1.grad + 1; i <= p2.grad; i++)
+		for (int i = this->grad + 1; i <= p.grad; i++)
 		{
-			p3.coef[i] = p2.coef[i];
+			p3.coef[i] = p.coef[i];
 		}
+		return p3;
 	}
-	return p3;
 }
 
 double Polinom::operator[](unsigned int i) // Supraincarcarea operatorului "[]"
 {
-	try
+
+	if (!(i >= 0 && i <= this->grad)) // Daca puterea data nu exista
 	{
-		if (!(i >= 0 && i <= this->grad))
-		{
-			throw this->coef[i];
-		}
+		throw range_error("Putere invalida"); 
 	}
-	catch (...)
-	{
-		cout << "Gradul introdus nu exista";
-		exit(-1);
-	}
+	return this->coef[i];
 }
 
-Polinom operator*(const Polinom& p1, const Polinom& p2) // Supraincarcarea operatorului '*' pentru inmultirea polinoamelor
+Polinom Polinom::operator*(const Polinom p) // Supraincarcarea operatorului '*' pentru inmultirea polinoamelor
 {
-	if (p1.grad == 0 && p1.coef[0] == 0) // Daca p1 e polinomul 0, return polinomul 0
+	if (this->grad == 0 && this->coef[0] == 0) // Daca polinomul din stanga e polinomul 0, return polinomul 0
 		return Polinom();
-	if (p2.grad == 0 && p2.coef[0] == 0) // Analog pentru p2
+	if (p.grad == 0 && p.coef[0] == 0) // Analog pentru polinomul din dreapta
 		return Polinom();
-	Polinom p3;
-	p3.grad = p1.grad + p2.grad;
-	p3.coef = new double[p3.grad + 1];
+	Polinom p3(this->grad + p.grad);
 	for (int i = 0; i <= p3.grad; i++)
 	{
 		p3.coef[i] = 0;
 	}
-	for (int i = 0; i <= p1.grad; i++)
+	for (int i = 0; i <= this->grad; i++)
 	{
-		for (int j = 0; j <= p2.grad; j++)
+		for (int j = 0; j <= p.grad; j++)
 		{
-			p3.coef[i + j] += p1.coef[i] * p2.coef[j];
+			p3.coef[i + j] += this->coef[i] * p.coef[j];
 		}
 	}
 	return p3;
 }
 
-Polinom operator*(const int& x, Polinom const& p) // Supraincarcarea operatorului '*' pentru inmultirea cu un scalar la stanga
+Polinom Polinom::operator*(const int x) // Supraincarcarea operatorului '*' pentru inmultirea cu un scalar la dreapta
 {
-	if (p.grad == 0 && p.coef[0] == 0 || x == 0) // Daca p e polinomul 0 sau x e 0, returnez polinomul 0
+	if (this->grad == 0 && this->coef[0] == 0 || x == 0) // Daca polinomul  0 sau x e 0, returnez polinomul 0
+	{
+		return Polinom();
+	}
+	Polinom p1 = *this;
+	for (int i = 0; i <= p1.grad; i++)
+	{
+		p1.coef[i] *= x;
+	}
+	return p1;
+}
+
+Polinom operator*(const int x, Polinom const p) // Supraincarcarea operatorului '*' pentru inmultirea cu un scalar la stanga
+{
+	if (p.grad == 0 && p.coef[0] == 0 || x == 0) // Daca polinomul  0 sau x e 0, returnez polinomul 0
 	{
 		return Polinom();
 	}
@@ -209,34 +215,33 @@ Polinom operator*(const int& x, Polinom const& p) // Supraincarcarea operatorulu
 	return p1;
 }
 
-Polinom operator*(Polinom const& p, const int& x) // Supraincarcarea operatorului '*' pentru inmultirea cu un scalar la dreapta
+Polinom Polinom::operator/(const Polinom p) // Supraincarcarea operatorului '/' pentru impartirea a doua polinoame
+											// (se va imparti polinomul cu gradul mai mare la cel cu gradul mai mic)
 {
-	return x * p;
-}
-
-Polinom operator/(const Polinom& p1, const Polinom& p2) // Supraincarcarea operatorului '/' pentru impartirea a doua polinoame (se va imparti polinomul cu gradul mai mare la cel cu gradul mai mic)
-{
-	if ((p1.grad == 0 && p1.coef[0] == 0) && (p2.grad == 0 && p2.coef[0] == 0)) // Daca ambele polinoame sunt 0, impartirea la 0 nu are sens
+	if ((this->grad == 0 && this->coef[0] == 0) && (p.grad == 0 && p.coef[0] == 0)) // Daca ambele polinoame sunt 0, impartirea la 0
+																					// nu are sens
 	{
-		throw - 1;
+		throw range_error("Ambele polinoame sunt 0 - Impartirea nu are sens!");
 	}
-	if ((p1.grad == 0 && p1.coef[0] == 0) || (p2.grad == 0 && p2.coef[0] == 0)) // Daca p1 este polinomul 0 sau p2 este polinomul 0, il returnez
+	if ((this->grad == 0 && this->coef[0] == 0) || (p.grad == 0 && p.coef[0] == 0)) // Daca unul dintre polinoame este 0, il returnez
 	{
 		return Polinom();
 	}
 
-	if (p1.grad >= p2.grad) // Cazul in care gradul lui p1 este mai mare sau egal
+	if (this->grad >= p.grad) // Cazul in care gradul polinomului din stanga este mai mare sau egal
 	{
-		Polinom p3(p1.grad - p2.grad); // p3 reprezinta catul care va fi returnat. Gradul catului va fi diferenta gradelor celor doua polinoame(in modul)
+		Polinom p3(this->grad - p.grad); // p3 reprezinta catul care va fi returnat. Gradul catului va fi
+										 // diferenta gradelor celor doua polinoame(in modul)
 		Polinom* aux = new Polinom(); // copia lui p1(pointer), ca sa-i pot modifica gradul
-		*aux = p1;
+		*aux = *this;
 		int grad = p3.grad;
 		for (int i = grad; i >= 0; i--) // parcurg vectorul coeficientilor catului(invers)
 		{
-			p3.coef[i] = aux->coef[aux->grad] / p2.coef[p2.grad]; // impartirea propriu-zisa ( de la grad mai mare la grad mai mic)
-			for (int j = p2.grad; j >= 0; j--) // scad din aux gradul curent din p3 * gradele din p2 ( ca sa dea impartirea corect)
+			p3.coef[i] = aux->coef[aux->grad] / p.coef[p.grad]; // impartirea propriu-zisa ( de la grad mai mare la grad mai mic)
+			for (int j = p.grad; j >= 0; j--) // scad din aux gradul curent din p3 * gradele 
+											  // polinomului din dreapta ( ca sa dea impartirea corect)
 			{
-				aux->coef[j + i] -= p3.coef[i] * p2.coef[j];
+				aux->coef[j + i] -= p3.coef[i] * p.coef[j];
 			}
 			aux->grad--;
 			while (aux->coef[aux->grad] == 0) // ignor coeficientii cu 0 pentru eficienta
@@ -250,16 +255,16 @@ Polinom operator/(const Polinom& p1, const Polinom& p2) // Supraincarcarea opera
 
 	else // analog, doar ca suntem in cazul in care gradul lui p2 > gradul lui p1
 	{
-		Polinom p3(p2.grad - p1.grad);
+		Polinom p3(p.grad - this->grad);
 		Polinom* aux = new Polinom();
-		*aux = p2;
+		*aux = p;
 		int grad = p3.grad;
 		for (int i = grad; i >= 0; i--)
 		{
-			p3.coef[i] = aux->coef[aux->grad] / p1.coef[p1.grad];
-			for (int j = p1.grad; j >= 0; j--)
+			p3.coef[i] = aux->coef[aux->grad] / this->coef[this->grad];
+			for (int j = this->grad; j >= 0; j--)
 			{
-				aux->coef[j + i] -= p3.coef[i] * p1.coef[j];
+				aux->coef[j + i] -= p3.coef[i] * this->coef[j];
 			}
 			aux->grad--;
 			while (aux->coef[aux->grad] == 0)
