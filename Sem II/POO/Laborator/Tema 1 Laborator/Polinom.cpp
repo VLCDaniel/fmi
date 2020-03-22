@@ -131,13 +131,11 @@ Polinom Polinom::operator+(const Polinom p) // Supraincarcarea operatorului '+'
 		Polinom p3(this->grad); // Polinomul care va fi returnat
 		for (int i = 0; i <= p.grad; i++)
 		{
-			p3.coef[i] = this->coef[i] + p.coef[i]; // Adaug in vectorul de coeficienti din p3 suma 
-													// coeficientilor pana la gradul lui p
+			p3.coef[i] = this->coef[i] + p.coef[i]; // Adaug in vectorul de coeficienti din p3 suma coeficientilor pana la gradul lui p
 		}
 		for (int i = p.grad + 1; i <= this->grad; i++)
 		{
-			p3.coef[i] = this->coef[i]; // Dupa adaug in vectorul de coeficienti din p3 ce a ramas din vectorul 
-										// coeficientilor din polinomul din stanga
+			p3.coef[i] = this->coef[i]; // Dupa adaug in vectorul de coeficienti din p3 ce a ramas din vectorul coeficientilor din polinomul din stanga
 		}
 		return p3;
 	}
@@ -218,8 +216,7 @@ Polinom operator*(const int x, Polinom const p) // Supraincarcarea operatorului 
 Polinom Polinom::operator/(const Polinom p) // Supraincarcarea operatorului '/' pentru impartirea a doua polinoame
 											// (se va imparti polinomul cu gradul mai mare la cel cu gradul mai mic)
 {
-	if ((this->grad == 0 && this->coef[0] == 0) && (p.grad == 0 && p.coef[0] == 0)) // Daca ambele polinoame sunt 0, impartirea la 0
-																					// nu are sens
+	if ((this->grad == 0 && this->coef[0] == 0) && (p.grad == 0 && p.coef[0] == 0)) // Daca ambele polinoame sunt 0, impartirea la 0 nu are sens
 	{
 		throw range_error("Ambele polinoame sunt 0 - Impartirea nu are sens!");
 	}
@@ -230,16 +227,14 @@ Polinom Polinom::operator/(const Polinom p) // Supraincarcarea operatorului '/' 
 
 	if (this->grad >= p.grad) // Cazul in care gradul polinomului din stanga este mai mare sau egal
 	{
-		Polinom p3(this->grad - p.grad); // p3 reprezinta catul care va fi returnat. Gradul catului va fi
-										 // diferenta gradelor celor doua polinoame(in modul)
+		Polinom p3(this->grad - p.grad); // p3 reprezinta catul care va fi returnat. Gradul catului va fi diferenta gradelor celor doua polinoame(in modul)
 		Polinom* aux = new Polinom(); // copia lui p1(pointer), ca sa-i pot modifica gradul
 		*aux = *this;
 		int grad = p3.grad;
 		for (int i = grad; i >= 0; i--) // parcurg vectorul coeficientilor catului(invers)
 		{
 			p3.coef[i] = aux->coef[aux->grad] / p.coef[p.grad]; // impartirea propriu-zisa ( de la grad mai mare la grad mai mic)
-			for (int j = p.grad; j >= 0; j--) // scad din aux gradul curent din p3 * gradele 
-											  // polinomului din dreapta ( ca sa dea impartirea corect)
+			for (int j = p.grad; j >= 0; j--) // scad din aux gradul curent din p3 * gradele polinomului din dreapta ( ca sa dea impartirea corect)
 			{
 				aux->coef[j + i] -= p3.coef[i] * p.coef[j];
 			}

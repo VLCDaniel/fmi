@@ -31,8 +31,7 @@ int main()
 	p3 = p1 * p; // Inmultirea intre doua polinoame
 	cout << p3;
 
-	assert((p2 * p).getGrad() == (p2.getGrad() + p.getGrad())); // Verific daca inmultirea polinoamelor e corecta :
-																// prin verificarea gradelor
+	assert((p2 * p).getGrad() == (p2.getGrad() + p.getGrad())); // Verific daca inmultirea polinoamelor e corecta : prin verificarea gradelor
 
 	/*
 	Polinom p4;
