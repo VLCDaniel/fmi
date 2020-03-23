@@ -71,7 +71,7 @@ istream& operator>>(istream& input, Polinom& p) // Supraincarcarea operatorului 
 	return input;
 }
 
-ostream& operator<<(ostream& output, const Polinom p) // Supraincarcarea operatorului de afisare '<<'
+ostream& operator<<(ostream& output, const Polinom& p) // Supraincarcarea operatorului de afisare '<<'
 {
 	for (int i = p.grad; i > 0; i--)
 	{
@@ -114,7 +114,7 @@ Polinom& Polinom::operator=(const Polinom& p) // Supraincarcarea operatorului '=
 	return *this;
 }
 
-double Polinom::calcul(double x) // Calculez valoarea polinomului in x
+double& Polinom::operator()(const double& x)
 {
 	double valoare = 0;
 	for (int i = 0; i <= this->grad; i++)
@@ -124,7 +124,7 @@ double Polinom::calcul(double x) // Calculez valoarea polinomului in x
 	return valoare;
 }
 
-Polinom Polinom::operator+(const Polinom p) // Supraincarcarea operatorului '+'
+Polinom Polinom::operator+(const Polinom& p) const // Supraincarcarea operatorului '+'
 {
 	if (this->grad >= p.grad) // Cazul in care gradul polinomului din stanga >= gradul polinomului din dreapta
 	{
@@ -154,7 +154,7 @@ Polinom Polinom::operator+(const Polinom p) // Supraincarcarea operatorului '+'
 	}
 }
 
-double Polinom::operator[](unsigned int i) // Supraincarcarea operatorului "[]"
+double& Polinom::operator[](unsigned int i) const // Supraincarcarea operatorului "[]"
 {
 
 	if (!(i >= 0 && i <= this->grad)) // Daca puterea data nu exista
@@ -164,7 +164,7 @@ double Polinom::operator[](unsigned int i) // Supraincarcarea operatorului "[]"
 	return this->coef[i];
 }
 
-Polinom Polinom::operator*(const Polinom p) // Supraincarcarea operatorului '*' pentru inmultirea polinoamelor
+Polinom Polinom::operator*(const Polinom& p) const // Supraincarcarea operatorului '*' pentru inmultirea polinoamelor
 {
 	if (this->grad == 0 && this->coef[0] == 0) // Daca polinomul din stanga e polinomul 0, return polinomul 0
 		return Polinom();
@@ -185,7 +185,7 @@ Polinom Polinom::operator*(const Polinom p) // Supraincarcarea operatorului '*' 
 	return p3;
 }
 
-Polinom Polinom::operator*(const int x) // Supraincarcarea operatorului '*' pentru inmultirea cu un scalar la dreapta
+Polinom Polinom::operator*(const int x) const // Supraincarcarea operatorului '*' pentru inmultirea cu un scalar la dreapta
 {
 	if (this->grad == 0 && this->coef[0] == 0 || x == 0) // Daca polinomul  0 sau x e 0, returnez polinomul 0
 	{
@@ -199,7 +199,7 @@ Polinom Polinom::operator*(const int x) // Supraincarcarea operatorului '*' pent
 	return p1;
 }
 
-Polinom operator*(const int x, Polinom const p) // Supraincarcarea operatorului '*' pentru inmultirea cu un scalar la stanga
+Polinom operator*(const int x, const Polinom& p) // Supraincarcarea operatorului '*' pentru inmultirea cu un scalar la stanga
 {
 	if (p.grad == 0 && p.coef[0] == 0 || x == 0) // Daca polinomul  0 sau x e 0, returnez polinomul 0
 	{
@@ -213,7 +213,7 @@ Polinom operator*(const int x, Polinom const p) // Supraincarcarea operatorului 
 	return p1;
 }
 
-Polinom Polinom::operator/(const Polinom p) // Supraincarcarea operatorului '/' pentru impartirea a doua polinoame
+Polinom Polinom::operator/(const Polinom& p) const// Supraincarcarea operatorului '/' pentru impartirea a doua polinoame
 											// (se va imparti polinomul cu gradul mai mare la cel cu gradul mai mic)
 {
 	if ((this->grad == 0 && this->coef[0] == 0) && (p.grad == 0 && p.coef[0] == 0)) // Daca ambele polinoame sunt 0, impartirea la 0 nu are sens
@@ -317,7 +317,12 @@ void Polinom::eliminare(int i) // Eliminarea unui termen de grad i din polinom
 			{
 				v[j] = this->coef[j];
 			}
-			this->grad = i - 1;
+			int j = i - 1;
+			while (v[j] == 0 && j > 0)
+			{
+				j--;
+			}
+			this->grad = j;
 			delete[] this->coef;
 			this->coef = v;
 		}
