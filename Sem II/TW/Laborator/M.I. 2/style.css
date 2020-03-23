@@ -1,0 +1,145 @@
+#i1
+{
+    color: orange; /* 15) */
+    font-weight: bold; /* 15) */
+    text-decoration-line: underline overline; /* 15) - Se observa ca se aplica atributele id-ului */
+}
+
+p
+{
+    color: green; /* 5) */
+    font-family: 'Comic Sans MS'; /* 5) */
+}
+
+h1
+{
+    text-decoration: underline; /* 6) */
+    color: red; /* 6) */
+}
+
+h3+p
+{
+    border: 2px dotted blue; /* 8) */
+    color: fuchsia; /* 8) */
+}
+
+h3~p
+{
+    color: rgb(0, 95, 76); /* 9) */
+    background-image: url('http://irinaciocan.ro/tehnici_web/imagini/backgr_pas3.png'); /* 9) */
+    background-attachment: fixed; /* 9) */
+}
+
+.c1
+{
+    background-color: purple; /* 10) - Se observa ca doar continutul din div, respectiv span, are background-ul mov */
+}
+
+.c2
+{
+    font-style: italic; /* 11) */
+    background-color: yellow; /* 11) */
+    text-decoration-line: line-through; /* 13) */
+}
+
+h3.c3
+{
+    background-color: orange; /* 12) */
+    text-transform: uppercase; /* 12) */
+}
+
+.c3
+{
+    font-variant: small-caps; /* 12) */
+    background-color: lime; /* 12) - Se observa ca selectorul h3.c3 are prioritate desi este situat inainte */
+    text-decoration-line: overline; /* 13) - Se observa ca este aplicata clasa c3 */
+}
+
+.c2.c3
+{
+    text-decoration-line: none; /* 14) */
+    color: rgb(220, 20, 60); /* 14) */
+}
+
+#abc p
+{
+    box-shadow: 6px 6px 5px 0px red; /* 16) */
+}
+
+#abc>p
+{
+    box-shadow: 10px 10px 5px 0px green; /* 17) */
+    text-shadow: red 3px 3px 3px; /* 17) */
+}
+
+ol li
+{
+    list-style-type: lower-roman; /* 18) */
+    border:ridge 4px purple; /* 18) */
+    border-top-left-radius: 10px; /* 18) */
+    border-top-right-radius: 10px; /* 18) */
+}
+
+p[title]::first-letter
+{
+    font-size: 20px; /* 19) */
+}
+
+p[title="altceva"]:hover
+{
+    background-color: pink; /* 20) */
+}
+
+p[title="altceva"]:hover+*
+{
+    visibility: hidden; /* 21) */
+}
+
+section p:nth-of-type(n + 2) /* p+p{...} - merge pentru ca toate paragrafele sunt in sectiuni */
+{
+    padding-left: 25px; /* 22) */
+}
+
+ol li:nth-of-type(even) /* :nth-of-type(2n) */
+{
+    text-align: right; /* 23) */
+}
+
+body>section:first-of-type
+{
+    border-top: green 4px dashed; /* 24) */
+    border-left: green 4px dashed; /* 24) */
+}
+
+section:nth-child(1)::after /* section>:first-child::after */
+{
+    content: " primul"; /* 25) */
+}
+
+h1:before, h2:before, h3:before
+{
+    content: url('http://irinaciocan.ro/imagini/foarte_zambaret.png'); /* 26) */
+}
+
+p:not([class]):not([id])
+{
+    cursor: crosshair; /* 27) */
+    background-color: red; /* 27) */
+}
+
+*
+{
+    outline: blue dashed 2px; /* 28) */
+}
+
+section#abc:hover section p
+{
+    letter-spacing: 15px; /* 29) */
+}
+
+section#abc:hover section p[title]+p
+{
+    letter-spacing: inherit; /* 29) */
+}
+
+/* 30) - css validator */
