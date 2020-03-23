@@ -1,0 +1,37 @@
+Test de teorie dat pentru 30% din nota pe Tema 1
+Grupa 144 Semigrupa 1
+
+1. Definitia matematica pentru lambda-NFA: cele 5 elemente care caracterizeaza un lambda-NFA. (Q, Sigma, q0, F, delta cu tot cu definitia recursiva).
+
+2. Se da un lambda-NFA cu 5 stari (0 stare initiala, 4 unica stare finala) cu tranzitiile:
+
+0 -> 1 cu lambda
+0 -> 3 cu lambda
+1 -> 0 cu lambda
+1 -> 2 cu a
+2 -> 2 cu a si b
+2 -> 3 cu lambda
+3 -> 1 cu lambda
+3 -> 4 cu lambda, a si b
+
+a) aratati cum este acceptat cuvantul "abb";
+b) ce cuvinte accepta, in general, automatul?
+
+Punctaj:
+1  - 1.00p
+2a - 1.50p
+2b - 0.50p
+
+Timp de lucru: 20 de minute.
+
+Observatii: automatul dat la test s-a folosit si pentru verificarea temei.
+Alte observatii: doar pentru implementarea NFA-ului, se obtin maxim 5p din 7p pe cod; au fost acordate bonusuri pentru implementare eficienta.
+
+Automatul pe care a fost testat NFA-ul:
+
+0 stare initiala, 2 unica stare finala, simboluri: a, b, c
+
+0 -> 1 cu a
+1 -> 0 cu a si b
+1 -> 2 cu c
+2 -> 0 cu c
