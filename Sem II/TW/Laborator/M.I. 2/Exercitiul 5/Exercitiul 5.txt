@@ -1,0 +1,38 @@
+Identificator: ex_mi_css_selectori_
+
+Se da urmatorul fisier html: "ex_mi_css_selectori_1.html" si printscreenul ajutator http://irinaciocan.ro/tehnici_web/imagini/exercitii/ex_mi_css_selectori_1/ex_mi_css_printscr_selectori_1.png
+
+Realizati urmatoarele cerinte fara a utiliza stil inline si fara a modifica html-ul prin adaugare atributelor class sau id, decat daca
+acest lucru e permis in mod explicit in cerinta (nu se vor puncta astfel de rezolvari). Puneti comentarii in CSS in care sa aratati unde
+ati rezolvat subpunctele.
+
+1) Formatati primul rand al tabelului astfel incat sa aiba fundal navy, iar textul sa fie scris cu culoare alba,
+Arial Black, Gadget, sans-serif
+
+2) Formatati ultimul rand astfel incat sa aiba fundal lime, scrisul italic, cu Comic Sans MS.
+
+3) Liniile despartitoare intre celule sa fie negre, tabelul sa aiba un border albastru outset de 4px. Intre celule sa nu existe spatii.
+
+4) Folositi un singur selector, astfel incat prima celula de pe fiecare rand (inclusiv primul rand, cu headerul) sa aiba textul subliniat.
+   (Gasiti doua variante pentru a rezolva acest subpunct - una din variante va fi pusa intr-un comentariu CSS).
+
+5) Modificati html-ul si adaugati un caption. Textul din caption trebuie sa fie o propozitie despre fluturi. Captionul tabelului trebuie
+   sa fie afisat sub tabel si sa contina text taiat si supraliniat. Captionul trebuie sa aiba un margin in partea de sus de 5px.
+   Textul caption-ului il puneti voi sa fie ce vreti.
+
+6) Celulele de pe ultima coloana contin fiecare cate o imagine . In momentul in care veniti cu cursorul pe o imagine, acesta trebuie sa
+   fie de tip crosshair iar imaginea sa capete un outline roz, punctat, de grosime 2px.
+
+7) Modificati listele de hobby-uri (aici aveti voie sa modificati si HTML-ul) astfel incat:
+	Indicii listei vor fi numere armenesti, italice, scrise cu rosu.
+	Textul efectiv al elementelor listei va fi albastru si bold, cu scris neitalic.
+
+8) Prima litera a fiecarei celule din tabel, cu exceptia celulelor din primul rand, din ultimul rand si a celor de pe coloana cu listele
+   sa aiba proprietatea ca pentru celulele pare litera sa fie lightblue, iar pentru imapre pink.
+
+9) Adaugati la sfarsitul paginii (aici puteti modifica HTML-ul) si un link catre google, care la hover sa schimbe dimensiunea literelor in
+   20px, iar la momentul click-ului pe el (link activ) sa aiba background galben.
+
+10) Sub tabel sunt 3 divuri in care exista 3,4,respectiv 5 paragrafe. Folosind un singur selector si fara a va defini o clasa
+ (adica nu veti folosi atributul class pentru paragrafe), faceti astfel incat in fiecare div (doar cele 3 divuri de sub tabel, nu si
+  cel de sub hr, de la al 4-lea paragraf incolo, textul sa aiba spatiul intre caractere de -3px).

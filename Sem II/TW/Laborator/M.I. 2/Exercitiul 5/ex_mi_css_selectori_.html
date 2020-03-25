@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<title>Titlu</title>
+	<style type="text/css">
+	table thead tr
+	{
+		background-color: navy; /* 1) */
+		color: white; /* 1) */
+		font-family: Arial Black, Gadget, sans-serif; /* 1) */
+	}
+
+	tfoot tr
+	{
+		background-color: lime; /* 2) */
+		font-style: italic; /* 2) */
+		font-family: Comic Sans MS; /* 2) */
+	}
+
+	table
+	{
+		border: blue outset 4px; /* 3) */
+		border-collapse: collapse; /* 3) */
+	}
+
+	table td, table th
+	{
+		border: 2px solid black; /* 3) */
+	}
+
+	table tbody tr td:first-child, table thead tr th:first-child
+	{
+		text-decoration: underline; /* 4) */
+	}
+
+	/* 4) Varianta 2:
+	table tbody tr td:nth-child(1), table thead tr th:nth-child(1)
+	{
+		text-decoration: underline;
+	}
+	*/
+
+	table caption
+	{
+		text-decoration: overline line-through; /* 5) */
+		margin-top: 5px; /* 5) */
+		caption-side: bottom; /* 5) */
+	}
+
+	table tbody td img:hover
+	{
+		cursor: crosshair; /* 6) */
+		outline: pink dotted 2px;/* 6) */
+	}
+
+	table td ol
+	{
+        list-style: none; /* 7) */
+        counter-reset: count; /* 7) */
+    }
+
+    table td ol li:before 
+	{
+        content: counter(count, armenian) ". "; /* 7) */
+        counter-increment: count; /* 7) */
+        color: red; /* 7) */
+        font-style: italic; /* 7) */
+    }
+
+    table td ol li
+	{
+        color: blue; /* 7) */
+        font-weight: bold; /* 7) */
+    }
+
+	table tbody td:nth-of-type(even):first-letter
+	{
+		background-color: lightblue; /* 8) */
+	}
+
+	table tbody td:nth-of-type(odd)::first-letter
+	{
+		background-color: pink; /* 8) */
+	}
+
+	table td ol::first-letter
+	{
+		background-color: unset; /* 8) */
+	}
+
+	a:hover
+	{
+		font-size: 20px; /* 9) */
+	}
+
+	a:active
+	{
+		background-color: yellow; /* 9) */
+	}
+
+	div:nth-child(-n + 4) p:nth-child(n + 4)
+	{
+        letter-spacing: -3px; /* 10) */
+    }
+	</style>
+</head>
+<body>
+	<table id="tab_fl">
+		<caption>Propozitie despre fluturi scrisa de mine</caption>
+		<thead>
+			<tr>
+				<th>Nume</th>
+				<th>Prenume</th>
+				<th>Ocupatie</th>
+				<th>Hobby-uri</th>
+				<th>Poza</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Flutureanu</td>
+				<td>Petala</td>
+				<td>instructor de zbor</td>
+				<td>
+					<ol>
+						<li>acrobatiile in aer</li>
+					</ol>
+				</td>
+				<td><img src="http://irinaciocan.ro/tehnici_web/imagini/fluture1a.png" alt="Flutureanu"></td>
+			</tr>
+			<tr>
+				<td>Fluflututurescu</td>
+				<td>Flu-flu</td>
+				<td>lo-logoped</td>
+				<td>
+					<ol>
+						<li>zbu-zbu-zburatul pe-pe c-c-campie</li>
+					</ol>
+				</td>
+				<td><img src="http://irinaciocan.ro/tehnici_web/imagini/fluture2a.png" alt="Fluflututurescu"></td>
+			</tr>
+			<tr>
+				<td>Fluturache</td>
+				<td>Ion</td>
+				<td>negustor de polen</td>
+				<td>
+					<ol>
+						<li>botanica</li>
+						<li>pictura</li>
+					</ol>
+				</td>
+				<td><img src="http://irinaciocan.ro/tehnici_web/imagini/fluture3a.png" alt="Fluturache"></td>
+			</tr>
+			<tr>
+				<td>Omiduta</td>
+				<td>Omidon</td>
+				<td>mancator de frunze</td>
+				<td>
+					<ol>
+						<li>actoria</li>
+						<li>deghizatul in fluture</li>
+					</ol>
+				</td>
+				<td><img src="http://irinaciocan.ro/tehnici_web/imagini/fluture4a.png" alt="Omiduta"></td>
+			</tr>
+			<tr>
+				<td>Fluturong</td>
+				<td>Zbarr</td>
+				<td>luptator profesionist</td>
+				<td>
+					<ol>
+						<li>artele martiale</li>
+						<li>batut paianjenii</li>
+					</ol>
+				</td>
+				<td><img src="http://irinaciocan.ro/tehnici_web/imagini/fluture5a.png" alt="Omiduta"></td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td>
+					Concluzii:
+				</td>
+				<td colspan="4">
+					Toti fluturii sunt frumosi!
+				</td>
+			</tr>
+		</tfoot>
+
+	</table>
+	<div>
+		<p>paragraf</p>
+		<p>paragraf</p>
+		<p>paragraf</p>
+	</div>
+	<div>
+		<p>paragraf</p>
+		<p>paragraf</p>
+		<p>paragraf</p>
+		<p>paragraf</p>
+	</div>
+	<div>
+		<p>paragraf</p>
+		<p>paragraf</p>
+		<p>paragraf</p>
+		<p>paragraf</p>
+		<p>paragraf</p>
+	</div>
+	<hr/>
+	<div>
+		<p>paragraf</p>
+		<p>paragraf</p>
+		<p>paragraf</p>
+		<p>paragraf</p>
+		<p>paragraf</p>
+	</div>
+	<!-- 9) -->
+	<a href="https://google.com" target="black">Link Google</a>	
+</body>
+</html>

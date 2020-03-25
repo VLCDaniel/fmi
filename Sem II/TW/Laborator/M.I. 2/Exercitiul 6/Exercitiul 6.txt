@@ -1,0 +1,14 @@
+Identificator: ex_css_border_radius
+
+Sa se creeze un div de 125px*150px, cu backgroundul avand nuanta(hue) egala cu 126, saturatia de 56.02% si luminozitatea de 70.66%.
+Divul va avea un border de 10px, dotted, cu culoarea avand componentele zecimale r:25,g:124,b:14 si transparenta de 0.82
+(doar borderul e transparent, nu tot divul). Colturile vor fi rotunjite astfel: colturile din stanga si dreapta sus vor forma
+un sfert de elipsa cu "raza orizontala" egala cu 40px si cea verticala egala cu 15px. Colturile din stanga si dreapta jos
+vor fi rotunjite sub forma unui sfert de cerc cu raza de 35px. Divul va fi incadrat de un outline albastru de 4px.
+De asemenea, va avea ca background imaginea:
+
+http://irinaciocan.ro/tehnici_web/imagini/puncte/lab10_2.png
+
+Rezultatul ar trebui sa arate ca in imaginea de mai jos:
+
+http://irinaciocan.ro/tehnici_web/imagini/printscr_ex_css_border_radius8.bmp
