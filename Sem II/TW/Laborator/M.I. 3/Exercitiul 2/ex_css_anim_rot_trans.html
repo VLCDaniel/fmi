@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<style>
+    div#soare
+    {
+        width: 100px;
+        height: 100px;
+        animation-name: soare;
+        animation-duration: 10s;
+        animation-iteration-count: infinite;
+        position: relative;
+        background-color: red;
+        border-radius: 0%;
+        animation-timing-function: linear;
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    @keyframes soare
+    {
+        /*
+        Prima parte
+        from
+        {
+            background-color: red;
+            left: -100px;
+        }
+        to
+        {
+            background-color: yellow;
+            left: 500px;
+        }
+        */
+    
+        0%
+        {
+            background-color: red;
+            left: -50px;
+            bottom: -200px;
+        }
+        50%
+        {
+            background-color: yellow;
+            left: 200px;
+            bottom: 50px;
+        }
+        100%
+        {
+            background-color: red;
+            left: 500px;
+            bottom: -300px;
+        }
+    }
+
+    div#fereastra
+    {
+        width: 500px;
+        height: 250px;
+        border: brown inset 7px;
+        animation-duration: 5s;
+        animation-name: cer;
+        animation-iteration-count: infinite;
+        overflow: hidden;
+    }
+
+    @keyframes cer
+    {
+        0% {background-color: black;}
+        25% {background-color: navy;}
+        100% {background-color: lightblue;}
+    }
+
+    .linie
+    {
+        width: 200px;
+        height: 10px;
+        background-color: inherit;
+    }
+
+    .linie:nth-child(1)
+    {   
+        position:absolute;
+        transform: rotate(30deg);
+    }
+
+    .linie:nth-child(2)
+    {
+        transform: rotate(60deg);
+    }
+
+    .linie:nth-child(3)
+    {
+        transform: rotate(90deg);
+    }
+
+    .linie:nth-child(4)
+    {
+        transform: rotate(120deg);
+    }
+
+    .linie:nth-child(5)
+    {
+        transform: rotate(150deg);
+    }
+
+    .linie:nth-child(6)
+    {
+        transform: rotate(180deg);
+    }
+</style>
+</head>
+
+<body>
+    <div id="fereastra">
+        <div id="soare">
+            <div class="linie">
+                <div class="linie">
+                    <div class="linie">
+                        <div class="linie">
+                            <div class="linie">
+                                <div class="linie">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
