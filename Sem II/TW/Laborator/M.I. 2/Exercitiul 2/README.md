@@ -3,6 +3,7 @@ Identificator: ex_css_important
 Fie urmatorul cod:
 
 ------------------------------
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,6 +32,7 @@ color:blue;
 </div>
 </body>
 </html>
+
 ------------------------------
 
 Puneti-l intr-un fisier html numit important.html
