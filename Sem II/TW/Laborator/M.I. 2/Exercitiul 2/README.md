@@ -2,7 +2,11 @@ Identificator: ex_css_important
 
 Fie urmatorul cod:
 
-------------------------------
+<details>
+<summary> Click me </summary>
+<p>
+    
+```
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,7 +35,10 @@ color:blue;
 </div>
 </body>
 </html>
-------------------------------
+```
+
+</p>
+</details>
 
 Puneti-l intr-un fisier html numit important.html
 Deschideti in browser. Ce culoare are textul?
