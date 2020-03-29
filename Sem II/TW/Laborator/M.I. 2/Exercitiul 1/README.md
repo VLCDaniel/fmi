@@ -3,7 +3,7 @@ Porniti de la pagina text_exe_css.txt, salvand fisierul cu extensia html.
 
 Pentru acest exercitiu veti folosi:
 
-[Referinta pentru selectori](https://www.w3schools.com/cssref/css_selectors.asp)
+[Referinta pentru selectori](https://www.w3schools.com/cssref/css_selectors.asp)  
 [Referinta pentru proprietati](https://www.w3schools.com/cssref/default.asp)
 
 Cerinte: (Atentie, se va trece in comentariu numarul fiecarei cerinte rezolvate!)
