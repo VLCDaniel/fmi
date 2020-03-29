@@ -7,8 +7,8 @@ un sfert de elipsa cu "raza orizontala" egala cu 40px si cea verticala egala cu 
 vor fi rotunjite sub forma unui sfert de cerc cu raza de 35px. Divul va fi incadrat de un outline albastru de 4px.
 De asemenea, va avea ca background imaginea:
 
-http://irinaciocan.ro/tehnici_web/imagini/puncte/lab10_2.png
+![Background](https://user-images.githubusercontent.com/38056943/77864152-c1e10380-722f-11ea-9eed-f968f49e4a99.png)
 
 Rezultatul ar trebui sa arate ca in imaginea de mai jos:
 
-http://irinaciocan.ro/tehnici_web/imagini/printscr_ex_css_border_radius8.bmp
+![Print Screen](https://user-images.githubusercontent.com/38056943/77864281-50ee1b80-7230-11ea-9660-7f9cf1365993.png)

@@ -1,6 +1,136 @@
 Identificator: ex_mi_css_selectori_
 
-Se da urmatorul fisier html: "ex_mi_css_selectori_1.html" si printscreenul ajutator http://irinaciocan.ro/tehnici_web/imagini/exercitii/ex_mi_css_selectori_1/ex_mi_css_printscr_selectori_1.png
+Se da urmatorul fisier html:
+
+<details>
+<summary>Click me</summary>
+
+```
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<title>Titlu</title>
+</head>
+<body>
+	<table id="tab_fl">
+		<thead>
+			<tr>
+				<th>Nume</th>
+				<th>Prenume</th>
+				<th>Ocupatie</th>
+				<th>Hobby-uri</th>
+				<th>Poza</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Flutureanu</td>
+				<td>Petala</td>
+				<td>instructor de zbor</td>
+				<td>
+					<ol>
+						<li>acrobatiile in aer</li>
+					</ol>
+				</td>
+				<td><img src="http://irinaciocan.ro/tehnici_web/imagini/fluture1a.png" alt="Flutureanu"></td>
+			</tr>
+			<tr>
+				<td>Fluflututurescu</td>
+				<td>Flu-flu</td>
+				<td>lo-logoped</td>
+				<td>
+					<ol>
+						<li>zbu-zbu-zburatul pe-pe c-c-campie</li>
+					</ol>
+				</td>
+				<td><img src="http://irinaciocan.ro/tehnici_web/imagini/fluture2a.png" alt="Fluflututurescu"></td>
+			</tr>
+			<tr>
+				<td>Fluturache</td>
+				<td>Ion</td>
+				<td>negustor de polen</td>
+				<td>
+					<ol>
+						<li>botanica</li>
+						<li>pictura</li>
+					</ol>
+				</td>
+				<td><img src="http://irinaciocan.ro/tehnici_web/imagini/fluture3a.png" alt="Fluturache"></td>
+			</tr>
+			<tr>
+				<td>Omiduta</td>
+				<td>Omidon</td>
+				<td>mancator de frunze</td>
+				<td>
+					<ol>
+						<li>actoria</li>
+						<li>deghizatul in fluture</li>
+					</ol>
+				</td>
+				<td><img src="http://irinaciocan.ro/tehnici_web/imagini/fluture4a.png" alt="Omiduta"></td>
+			</tr>
+			<tr>
+				<td>Fluturong</td>
+				<td>Zbarr</td>
+				<td>luptator profesionist</td>
+				<td>
+					<ol>
+						<li>artele martiale</li>
+						<li>batut paianjenii</li>
+					</ol>
+				</td>
+				<td><img src="http://irinaciocan.ro/tehnici_web/imagini/fluture5a.png" alt="Omiduta"></td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td>
+					Concluzii:
+				</td>
+				<td colspan="4">
+					Toti fluturii sunt frumosi!
+				</td>
+			</tr>
+		</tfoot>
+
+	</table>
+	<div>
+		<p>paragraf</p>
+		<p>paragraf</p>
+		<p>paragraf</p>
+	</div>
+		<div>
+		<p>paragraf</p>
+		<p>paragraf</p>
+		<p>paragraf</p>
+		<p>paragraf</p>
+	</div>
+	<div>
+		<p>paragraf</p>
+		<p>paragraf</p>
+		<p>paragraf</p>
+		<p>paragraf</p>
+		<p>paragraf</p>
+	</div>
+	<hr/>
+	<div>
+		<p>paragraf</p>
+		<p>paragraf</p>
+		<p>paragraf</p>
+		<p>paragraf</p>
+		<p>paragraf</p>
+	</div>	
+</body>
+</html>
+```
+
+</details>
+
+
+si printscreenul ajutator:
+![Printscreen](https://user-images.githubusercontent.com/38056943/77864089-5b5be580-722f-11ea-8a89-8b0c3fc2ee42.png)
 
 Realizati urmatoarele cerinte fara a utiliza stil inline si fara a modifica html-ul prin adaugare atributelor class sau id, decat daca
 acest lucru e permis in mod explicit in cerinta (nu se vor puncta astfel de rezolvari). Puneti comentarii in CSS in care sa aratati unde
