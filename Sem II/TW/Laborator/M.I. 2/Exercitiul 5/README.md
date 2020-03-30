@@ -6,7 +6,6 @@ Se da urmatorul fisier html:
 <summary>Click me</summary>
 
 ```
-
 <!DOCTYPE html>
 <html>
 <head>

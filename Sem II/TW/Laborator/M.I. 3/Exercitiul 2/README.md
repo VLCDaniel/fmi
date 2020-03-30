@@ -1,8 +1,30 @@
 Identificator: ex_css_anim_rot_trans
 
-Sa facem soarele sa rasara si apoi sa apuna... Realizati urmatoarea animatie pornind de la fisierul: text_css_anim_rot_trans.html
+Sa facem soarele sa rasara si apoi sa apuna... Realizati urmatoarea animatie pornind de la fisierul:
 
-http://irinaciocan.ro/tehnici_web/video/ex_css_anim_rot_trans.ogv
+<details>
+<summary>Click me</summary>
+
+```
+<!DOCTYPE html>
+<html>
+<head>
+
+
+</head>
+<body>
+
+<div id="fereastra">
+<div id="soare"></div>
+</div>
+
+</body>
+</html>
+```
+
+</details>
+
+[Video 1](http://irinaciocan.ro/tehnici_web/video/ex_css_anim_rot_trans.ogv)
 
 "Soarele" este de dimensiune 100px*100px si trece de la background rosu la galben si apoi iar la rosu.
 
@@ -16,11 +38,11 @@ realizarea rotatiei se va considera la 300=(250+50, adica juma de fereastra+juma
 fost aleasa astfel ca soarele sa nu depaseasca rama de sus a ferestrei. Nu puteam lasa soarele sa faca un semicerc, din cauza
 ca fereastra e prea putin inalta. De aceea soarele se deplaseaza in partea dreapta un pic mai mult in jos.
 
-http://irinaciocan.ro/tehnici_web/video/ex_css_anim_rot_trans2.ogv
+[Video 2](http://irinaciocan.ro/tehnici_web/video/ex_css_anim_rot_trans2.ogv)
 
 Realizati urmatoarea structura (doar din divuri):
 
-http://irinaciocan.ro/tehnici_web/imagini/printscreen_raze.bmp
+![Raze](https://user-images.githubusercontent.com/38056943/77865594-d9bc8580-7237-11ea-9f05-b5658c0af84d.png)
 
 Aici puteti folosi 12 divuri insa e mai usor cu doar 6 mai lungi, rotite la jumatate. Un astfel de div va avea latimea de
 200px si inaltimea de 10px (pastrati, va rog, dimensiunile precizate in laborator ca sa se potriveasca si cu calculul facut pe tabla).
@@ -29,4 +51,4 @@ In final veti adauga "razele" la soarele de dinainte. Animatia de mai jos arata 
 video, dar asta e de la CamSudio, programul cu care fac inregistrarile, deoarece soarele se misca prea repede si rata cu
 care CamStudio salveaza frameurile e ceva mai redusa, si nu prinde si pozitiile intermediare).
 
-http://irinaciocan.ro/tehnici_web/video/ex_css_anim_rot_trans_final.ogv
+[Video 3](http://irinaciocan.ro/tehnici_web/video/ex_css_anim_rot_trans_final.ogv)

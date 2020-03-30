@@ -4,7 +4,7 @@ Exercitiu tranzitie. Realizati o tranzitie asemanatoare cu cea din videoclip. Nu
 dimensiunile si nici culorile (daca nu sunt specificate) insa schimbarile implicate de tranzitie trebuie sa fie vizbile si
 identice cu ce e in videoclip.
 
-http://irinaciocan.ro/tehnici_web/video/ex_mi_css_tranz_anim_omulet_incruntat.mp4
+[Omulet incruntat](http://irinaciocan.ro/tehnici_web/video/ex_mi_css_tranz_anim_omulet_incruntat.mp4)
 
 Descriere tranzitie
 

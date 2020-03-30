@@ -2,7 +2,7 @@ Identificator: ex_mi_css_animatie_contor
 
 Exercitiu animatie. Pornind de la fisierul html animatie_cronometru_dreptunghi.html realizati animatia din videoclipul urmator.
 
-http://irinaciocan.ro/tehnici_web/video/tranz_anim_contor_5s.mp4
+[Animatie contor](http://irinaciocan.ro/tehnici_web/video/tranz_anim_contor_5s.mp4)
 
 Descriere animatie:
 
