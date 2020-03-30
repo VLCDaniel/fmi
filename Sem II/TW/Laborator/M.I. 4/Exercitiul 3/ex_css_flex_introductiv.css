@@ -1,0 +1,80 @@
+		html{
+			font-size:12px;
+		}
+		.buton{
+			border:2px brown ridge;
+			background: #ffc37a;
+			font-weight:bold;
+			color:white;
+			text-shadow:0px 0px 4px black,0px 0px 3px black,0px 0px 2px black,0px 0px 2px black;
+			box-shadow:0px -3px 2px grey;
+			height:2em;
+			line-height:2em;
+			width:120px;
+			text-align:center;
+			display:inline-block;
+			font-size:0.9em;
+			border-top-left-radius:5px;
+			border-top-right-radius:5px;
+		}
+		.buton:hover{
+			background:orange;
+		}
+		#coloane>section{
+			border: 1px solid green;
+			padding:2px;
+			min-width:250px;
+			/*width: 25%;*/
+			flex-basis: 0;
+			flex-grow: 1;
+		}
+		div#coloane{
+			border-top: 3px inset #BBB;
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		#ord_dr_s:hover~#coloane
+		{
+			flex-direction: row-reverse;
+		}
+		
+		#ord_3124:hover~#coloane>section:nth-of-type(3)
+		{
+			order: 1;
+		}
+
+		#ord_3124:hover~#coloane>section:nth-of-type(1)
+		{
+			order: 2;
+		}
+
+		#ord_3124:hover~#coloane>section:nth-of-type(2)
+		{
+			order: 3;
+		}
+
+		#ord_3124:hover~#coloane>section:nth-of-type(4)
+		{
+			order: 4;
+			flex-grow: 3;
+		}
+
+		#imagini
+		{
+			display: flex;
+			align-items: flex-start;
+			flex-direction: column;
+		}
+
+		#img_invers:hover~#coloane #imagini
+		{
+			flex-direction: column-reverse;
+			align-items: flex-end;
+		}
+
+		#img_invers:hover~#coloane #imagini h3
+		{
+			align-self: flex-start;
+			order: 1; /* pt ca celelalte au order 0 */
+		}

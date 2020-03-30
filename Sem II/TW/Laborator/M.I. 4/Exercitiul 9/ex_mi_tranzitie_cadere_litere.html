@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<head>
+	<style>
+		body
+		{
+			margin: 0;
+		}
+	
+		.bloc
+		{
+			position: fixed;
+			background-color: lightblue;
+			width: 300px;
+			height: 90px;
+			top: 20px;
+			overflow: hidden;
+		}
+		
+		.litera
+		{
+			position: relative;
+			color: black;
+			font-size: 40px;
+			top: -40px;
+			transition: top 1s;
+			display: inline-block;
+		}
+		
+		#b
+		{
+			left: 15px;
+		}
+		
+		#c
+		{
+			left: 30px;
+		}
+		
+		.bloc:hover #a
+		{
+			top: 20px;
+		}
+		
+		.bloc:hover #b
+		{
+			top: 20px;
+			transition-delay: 1s;
+		}
+		
+		.bloc:hover #c
+		{
+			top: 20px;
+			transition-delay: 2s;
+		}
+		
+	</style>
+</head>
+
+<body>
+
+	<div class="bloc">
+		<div class="litera" id="a">a</div>
+		<div class="litera" id="b">b</div>
+		<div class="litera" id="c">c</div>
+	</div>
+
+</body>
+</html>

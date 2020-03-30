@@ -1,0 +1,200 @@
+
+<!DOCTYPE html>
+<html lang="ro">
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Tabel responsive varianta 1</title>
+        <link rel="stylesheet" type="text/css" href="ex_mi_tabel_responsive_var1.css"/>
+        <style>
+            html
+            {
+                font-size: large;
+                margin-left: 100px;
+            }
+
+            table#tab_preturi
+            {
+                width: 150px;
+            }
+
+            table#tab_preturi caption
+            {
+                font-weight: bold;
+	            text-shadow: 0px 1px #c3c3c3;
+            }
+
+            table#tab_preturi tbody tr td:first-child
+            {
+				grid-column: 1/3;
+                border-top-left-radius: 50%;
+                border-top-right-radius: 50%;
+                border: 1px solid black;
+				color: red;
+				text-transform: uppercase;
+				font-variant: small-caps;
+				text-align: center;
+				font-size: 0.8em;
+				padding: 5%;
+				background: linear-gradient(white, skyblue);
+				letter-spacing: 3px;
+				font-weight: 550;
+            }
+
+			table#tab_preturi tbody tr td:first-child::first-letter
+			{
+				font-weight: bold;
+				font-size: 1.2em;
+			}
+
+            table#tab_preturi tbody tr
+            {
+                display: grid;
+				grid-template-columns: 80px 80px;
+				margin-bottom: 20px;
+            }
+
+            table#tab_preturi thead
+            {
+                display: none;
+            }
+
+			tr td:nth-child(2), tr td:nth-child(3)
+			{
+				border: 1px dashed black;
+				line-height: 2em;
+				text-align: center;
+			}
+
+			tr td:nth-child(2)
+			{
+				grid-area: 2/1/3/2;
+				font-size: 0.8em;
+			}
+
+			tr td:nth-child(3)
+			{
+				grid-area: 2/2/3/3;
+				border-left: 0px;
+				font-size: 0.8em;
+			}
+
+			tr td:nth-child(n+4)
+			{
+				grid-column: 1/3;
+				border: 1.5px solid black;
+				line-height: 2em;
+				font-size: 0.8em;
+			}
+
+			tr td:nth-child(n+5)
+			{
+				border-top: 0px;
+			}
+
+			tr td:nth-child(4)
+			{
+				border-top: 1px solid black;
+			}
+
+			tr td:nth-child(4):before
+			{
+				padding-left: 4px;
+				float: left;
+				width: 60%;
+				content: "Layere";
+			}
+
+			tr td:nth-child(5):before
+			{
+				padding-left: 4px;
+				float: left;
+				width: 60%;
+				content: "Multi user";
+			}
+
+			tr td:nth-child(6):before
+			{
+				padding-left: 4px;
+				float: left;
+				width: 60%;
+				content: "Efecte speciale";
+			}
+
+			tr td:nth-child(7):before
+			{
+				padding-left: 4px;
+				float: left;
+				width: 60%;
+				content: "Tool Animatie";
+			}
+
+			tr td:nth-child(8):before
+			{
+				padding-left: 4px;
+				float: left;
+				width: 60%;
+				content: "Watermark";
+			}
+        </style>
+	</head>
+	<body>
+		<table id="tab_preturi">
+			<caption>Tipuri de licente</caption>
+			<thead>
+				<tr>
+					<th>Tip</th>
+					<th>Valabilitate</th>
+					<th>Pret</th>
+					<th>Layere</th>
+					<th>Multi user</th>
+					<th>Efecte speciale</th>
+					<th>Tool Animatie</th>
+					<th>Watermark</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Trial</td>
+					<td>1 luna</td>
+					<td>gratis</td>
+					<td>nu</td>
+					<td>nu</td>
+					<td>nu</td>
+					<td>nu</td>
+					<td>da</td>
+				</tr>
+				<tr>
+					<td>Personal</td>
+					<td>1 an</td>
+					<td>10 RON</td>
+					<td>da</td>
+					<td>nu</td>
+					<td>nu</td>
+					<td>nu</td>
+					<td>nu</td>
+				</tr>
+				<tr>
+					<td>Profesional</td>
+					<td>2 ani</td>
+					<td>30 RON</td>
+					<td>da</td>
+					<td>nu</td>
+					<td>da</td>
+					<td>da</td>
+					<td>nu</td>
+				</tr>
+				<tr>
+					<td>Business</td>
+					<td>2 ani</td>
+					<td>70 RON</td>
+					<td>da</td>
+					<td>da</td>
+					<td>da</td>
+					<td>da</td>
+					<td>nu</td>
+				</tr>
+			</tbody>
+		</table>
+		
+	</body>
+</html>

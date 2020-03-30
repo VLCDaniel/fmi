@@ -1,0 +1,90 @@
+body
+{
+    background:skyblue;
+    counter-reset: total 2;
+}
+
+div#container
+{
+    counter-reset: suspecti 4;
+    margin-left:15%;
+	margin-right:15%;
+	border-left:2px solid grey;
+	border-right:2px solid grey;
+	background:white;
+	padding:5%;
+}
+
+li.fara_alibi
+{
+	color:red;
+	font-weight:bold;
+}
+
+div.cont_lista ol
+{
+    counter-increment: total;
+    list-style-type: none;
+}
+
+div.cont_lista ol li::before
+{
+    content: counter(total) ". " counter(total2, lower-alpha);
+}
+
+div.cont_lista
+{
+    display: flex;
+    flex-flow: column;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+div.cont_lista ol
+{
+    padding-top: 0;
+    margin-top: 0;
+}
+
+p
+{
+    order: -1;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+ol
+{
+    counter-reset: total2;
+}
+
+li
+{
+    counter-increment: total2;
+}
+
+p#pisici::after
+{
+    content: "Total pisici: " counter(total2);
+}
+
+p#soareci::after
+{
+    content: "Total soareci: " counter(total2);
+}
+
+p#papuci::after
+{
+    content: "Total papuci: " counter(total2);
+}
+
+li.fara_alibi
+{
+    counter-increment: suspecti;
+    counter-increment: total2;
+}
+
+li.fara_alibi::after
+{
+    content: url("http://irinaciocan.ro/tehnici_web/imagini/smiley_hot_mic_20x19.png") "(" counter(suspecti) ")";
+}
