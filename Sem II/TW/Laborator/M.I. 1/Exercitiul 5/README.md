@@ -1,0 +1,1 @@
+Realizati o animatie SVG. SVG-ul va avea dimensiunea 100*300. Avem initial un dreptunghi de inaltime 20 si lungime 50 cu coltul din stanga sus la 10,10. Dreptunghiul e de culoare galbena cu contur albastru. Dimensiunea conturului e 3. Dreptunghiul se va deplasa de la pozitia 10,10 la 10,200 de 4 ori.
