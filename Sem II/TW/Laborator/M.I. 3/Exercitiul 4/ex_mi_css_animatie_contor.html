@@ -1,112 +1,118 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<meta charset="UTF-8"/>
-    <title>Contor</title>
-    <style>
-        #container
-        {
-            width: 200px;
-            height: 200px;
-            border: 5px inset brown;
-            animation-name: bgcolor;
-            animation-duration: 1s;
-            animation-iteration-count: infinite;
-        }
+<!-- saved from url=(0086)http://www.irinaciocan.ro/tehnici_web/fisiere_exercitii/ex_mi_css_animatie_contor.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<title>Contor</title>
+<style type="text/css">
 
-        #contor
-        {
-            display: flex;
-            flex-wrap: wrap;
-            animation-name: cronometru;
-            animation-duration: 5s;
-            animation-iteration-count: infinite;
-        }
+#contor{
+	position:relative;
+	background-color:blue;
+	width:200px;
+	height:200px;
+	border: 5px;
+	border-color: brown;
+	border-style: inset;
+	
+	animation-name:animBack;
+	animation-duration:6s;
+	animation-timing-function:linear;
+	animation-iteration-count:infinite;
+}
 
-        .numar
-        {
-            display: none;
-            position: absolute;
-            top: 75px;
-            width: 200px;
-            height: 200px;
-            text-align: center;
-            font-size: 50px;
-            vertical-align: middle;
-        }
+#linie{
+	position:fixed;
+	background-color:magenta;
+	opacity: 0.5;
+	width:100px;
+	height:15px;
+	left:110px;
+	top:105px;
+	
+	animation-name:animBara;
+	animation-duration:1s;
+	animation-timing-function:linear;
+	animation-iteration-count:infinite;
 
-        #nr1
-        {
-            animation-name: numar;
-            animation-duration: 1s;
-            animation-iteration-count: infinite;
-        }
+}
 
-        @keyframes numar
-        {
-            from
-            {
-                display: none;
-                background-color: red;
-            }
-            
-            to
-            {
-                display: initial;
-                background-color: yellow;
-            }
-        }
+.numar{
+	position:fixed;
+	font-size:100px;
+	top:50px;
+	left:85px;
+	visibility:hidden;
+	
+	animation-name:animNumere;
+	animation-duration: 6s;
+	animation-fill-mode:forwards;
+	animation-timing-function:linear;
+	animation-iteration-count:infinite;
+}
 
-        @keyframes bgcolor
-        {
-		    from
-            {
-			    background-color: blue;
-		    }
+#nr5{
+	animation-delay:0s;
+}
+#nr4{
+	animation-delay:1s;
+}
+#nr3{
+	animation-delay:2s;
+}
+#nr2{
+	animation-delay:3s;
+}
+#nr1{
+	animation-delay:4s;
+}
 
-		    to
-            {
-			    background-color: red;
-		    }
-        }
 
-        @keyframes cronometru
-        {
-            0%
-            {
+@keyframes animNumere{
+	16%{visibility:visible;}
+	17%{visibility:hidden;}
+}
 
-            }
+@keyframes animBack{
+	16%{
+		background-color:red;
+	}
+	32%{
+		background-color:blue;
+	}
+	48%{
+		background-color:red;
+	}
+	66%{
+		background-color:blue;
+	}
+	82%{
+		background-color:red;
+	}
+	83%{
+		background-color:white;
+	}
+	100%{
+		background-color:white;
+	}
+}
 
-            20%
-            {
-                display: initial;
-            }
+@keyframes animBara{
+	
+	0%{transform:rotate(0deg);
+		transform-origin: 0% 50%;}
+	50%{transform:rotate(180deg);
+		transform-origin: 0% 50%;}
+	100%{transform:rotate(360deg);
+		transform-origin: 0% 50%;}
+}
 
-            40%
-            {
-                display: initial;
-            }
 
-            60%
-            {
-                display: initial;
-            }
-
-            80%
-            {
-                display: initial;
-            }
-
-            100%
-            {
-                display: initial;
-            }
-        }
-    </style>
-</head>
+</style></head>
 <body>
 <div id="container">
-	<div id="cronometru"></div>
+	<div id="cronometru">
+
+	</div>
 	<div id="contor">
 		<div class="numar" id="nr5">5</div>
 		<div class="numar" id="nr4">4</div>
@@ -117,5 +123,5 @@
 		</div>
 	</div>
 </div>
-</body>
-</html>
+
+</body></html>
