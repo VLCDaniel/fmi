@@ -5,7 +5,7 @@ Fiecare subpunct are 2 puncte din nota 10.
 Se da o pagina html:
 
 <details>
-<summary> Click me </summary>
+<summary> Click me (HTML)</summary>
 <p>
     
 ```
@@ -84,7 +84,7 @@ li.fara_alibi
 
 </details>
 
- folosit in acea pagina. Sa se realizeze cerintele fara a modifica pagina html:
+ folosit in acea pagina. Sa se realizeze cerintele <b color="red">fara a modifica pagina html</b>:
 
 1) Fiecare element din lista sa aiba inlocuit indicele item-ului cu un indice de forma numar_lista.numar_element_in lista
 

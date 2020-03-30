@@ -200,17 +200,17 @@ si realizati urmatoarele taskuri:
 
 1) Modificati media query-ul pentru ecran mediu sa fie intre 400 si 650 px.
 
-Adaugati si un media query pentru ecran mic. In acesta realizati urmatoarele:
+	Adaugati si un media query pentru ecran mic. In acesta realizati urmatoarele:
 
-- Fiecare optiune de meniu sa se intinda pe toata latimea ecranului (deci meniul sa ocupe 8 randuri). Submeniul sa se afiseze iar pe verticala, pornind de sub optiunea de meniu corespunzatoare. Imaginea in continuare sa apara sub text si nu pe coloana paralela cu textul.
+	- Fiecare optiune de meniu sa se intinda pe toata latimea ecranului (deci meniul sa ocupe 8 randuri). Submeniul sa se afiseze iar pe verticala, pornind de sub optiunea de meniu corespunzatoare. Imaginea in continuare sa apara sub text si nu pe coloana paralela cu textul.
 
 2) Pentru fiecare dimensiune de ecran stabiliti o dimensiune de font de baza pentru html:
 
-- pentru ecran mic va fi 10px
-- pentru ecran mediu, 12px
-- pentru ecran mare, 14px
+	- pentru ecran mic va fi 10px
+	- pentru ecran mediu, 12px
+	- pentru ecran mare, 14px
 
-Puteti face sa se micsoreze literele de la o dimensiune de ecran la alta printr-o tranzitie CSS? Justificati raspunsul. (raspunsul se va adauga intr-un comentariu).
+	Puteti face sa se micsoreze literele de la o dimensiune de ecran la alta printr-o tranzitie CSS? Justificati raspunsul. (raspunsul se va adauga intr-un comentariu).
 
 3) Schimbati unitatile de masura rem din codul CSS in em, dar cu masurile potrivite, astfel incat pagina sa se afiseze la fel (cu aceleasi font-size-uri finale). Scrieti intr-un comentariu cum ati fi facut asta cu procentaje in loc de em.
 

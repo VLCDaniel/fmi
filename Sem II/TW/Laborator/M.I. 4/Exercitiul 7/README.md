@@ -1,6 +1,6 @@
 Identificator: ex_mi_tabel_responsive_var1
 
-Sa se afiseze tabelul din acest fisier:
+Sa se afiseze tabelul din acest fisier html:
 
 <details>
 <summary> Click me </summary>
@@ -78,6 +78,6 @@ Sa se afiseze tabelul din acest fisier:
 
 </details>
 
- html ca in imaginea:
+ca in imaginea:
 
 ![Tabel Responsive](https://user-images.githubusercontent.com/38056943/77872428-9f5ee280-724f-11ea-9ac2-dd9a565003bd.png)
