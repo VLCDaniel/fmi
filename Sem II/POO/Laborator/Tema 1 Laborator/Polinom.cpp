@@ -114,7 +114,7 @@ Polinom& Polinom::operator=(const Polinom& p) // Supraincarcarea operatorului '=
 	return *this;
 }
 
-double& Polinom::operator()(const double& x)
+double Polinom::operator()(const double& x)
 {
 	double valoare = 0;
 	for (int i = 0; i <= this->grad; i++)
