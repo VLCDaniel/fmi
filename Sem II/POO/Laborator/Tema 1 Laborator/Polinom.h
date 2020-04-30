@@ -14,7 +14,7 @@ public:
 	friend istream& operator>>(istream&, Polinom&); // supraincarc citirea
 	friend ostream& operator<<(ostream&, const Polinom&); // supraincarc afisarea
 	Polinom& operator=(const Polinom&); // supraincarc '='
-	double& operator()(const double&); // calculeaza valoarea polinomului
+	double operator()(const double&); // calculeaza valoarea polinomului
 	Polinom operator+(const Polinom&) const; // supraincarcarea operatorului '+'
 	double& operator[](unsigned int) const; // supraincarcarea operatorului '[]'
 	Polinom operator*(const Polinom&) const; // supraincarcarea operatorului '*' pentru inmultirea a 2 polinoame
