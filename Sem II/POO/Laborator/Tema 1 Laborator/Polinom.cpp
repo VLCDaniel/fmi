@@ -114,7 +114,7 @@ Polinom& Polinom::operator=(const Polinom& p) // Supraincarcarea operatorului '=
 	return *this;
 }
 
-double& Polinom::operator()(const double& x)
+double Polinom::operator()(const double& x)
 {
 	double valoare = 0;
 	for (int i = 0; i <= this->grad; i++)
@@ -159,7 +159,7 @@ double& Polinom::operator[](unsigned int i) const // Supraincarcarea operatorulu
 
 	if (!(i >= 0 && i <= this->grad)) // Daca puterea data nu exista
 	{
-		throw range_error("Putere invalida"); 
+		throw range_error("Putere invalida");
 	}
 	return this->coef[i];
 }
