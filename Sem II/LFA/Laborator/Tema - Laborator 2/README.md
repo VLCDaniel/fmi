@@ -1,2 +1,2 @@
-DFAtoREGEX - perfect functional
+DFAtoREGEX - perfect functional  
 Minimizare DFA - incomplet
