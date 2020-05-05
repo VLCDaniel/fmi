@@ -118,3 +118,17 @@ Dupa ce pun valoarea nodului 5 sau 7 in radacina, apoi **vechiul nod se sterge**
 **Termen  <= ora 23:59 / 29 aprilie 2020**
 
 Punctaj acumulabil: 3(+3)/1/1= 5 bază (+3 bonus)
+
+
+1) (3p) Implementati arbore binar de cautare cu operatiile:
+
+- Inserarea unei chei **x**
+- Cautarea unei chei **x**(zice 0/1)
+- Afisarea cheilor din arbore dupa SRD (inordine) si RSD (preordine)
+- (+3p) stergerea unei chei **x** (o aparitie) cu pastrarea proprietatii de arbor binar de cautare
+
+2) (1p) Folositi un arbore binar de cautare ca sa sortati n siruri de caractere. Puteti folosi **strcmp** din **string.h** pentru comparare lexicografica intre siruri de caractere.
+
+3) (1p) Pentru un arbore binar de cautare si doi intregi k1 si k2, sa se afiseze toate cheile din intervalul deschis (k1,k2). Sa se omita parcurgerea subarborilor care nu pot contine solutii.
+
+![Arbore](https://user-images.githubusercontent.com/38056943/81079616-7093f600-8ef8-11ea-89e8-9956b24596b1.png)
